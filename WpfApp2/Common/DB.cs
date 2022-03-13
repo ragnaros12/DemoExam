@@ -35,9 +35,6 @@ namespace WpfApp2.Common
 				dresses.Add(new("metal", 300, 1));
 				SaveChanges();
 			}
-			dresses.Add(new("metal", 10, 1));
-			dresses.Add(new("metal", 5, 1));
-			dresses.Add(new("metal", 100, 1));
 			SaveChanges();
 		}
 
