@@ -27,14 +27,18 @@ namespace WpfApp2.Common
 		}
 		private DB() : base()
 		{
-			//Database.EnsureDeleted();
+			Database.EnsureDeleted();
 			Database.EnsureCreated();
 			if (users.Count() == 0)
 			{
 				users.Add(new("11", "1") { TypeUser = TypeUser.ADMIN});
-				dresses.Add(new("metal", 1, 1));
+				dresses.Add(new("metal", 300, 1));
 				SaveChanges();
 			}
+			dresses.Add(new("metal", 10, 1));
+			dresses.Add(new("metal", 5, 1));
+			dresses.Add(new("metal", 100, 1));
+			SaveChanges();
 		}
 
 		protected override void OnConfiguring(DbContextOptionsBuilder contextOptions)

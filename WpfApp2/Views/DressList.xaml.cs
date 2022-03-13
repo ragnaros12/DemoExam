@@ -78,5 +78,25 @@ namespace WpfApp2.Views
 		{
 			All.toUsersList();
 		}
+		bool id = false, size = false;
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+			List<Dress> dresses = (List<Dress>)ListDress.ItemsSource;
+			if (id)
+				ListDress.ItemsSource = dresses.OrderBy(u => u.Id).ToList();
+			else
+				ListDress.ItemsSource = dresses.OrderBy(u => u.Id).Reverse().ToList();
+			id = !id;
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			List<Dress> dresses = (List<Dress>)ListDress.ItemsSource;
+			if (size)
+				ListDress.ItemsSource = dresses.OrderBy(u => u.size).ToList();
+			else
+				ListDress.ItemsSource = dresses.OrderBy(u => u.size).Reverse().ToList();
+			size = !size;
+		}
 	}
 }

@@ -46,7 +46,7 @@ namespace WpfApp2.Views
 			{
 				User user = DB.db.users.Where(u => u.login == login && password == u.password).First();
 				All.user = user;
-				MessageBox.Show("Вход успешен. Добрый день " + user.login);
+				MessageBox.Show("Вход успешен. Добрый день " + user.login, "LoginResult");
 				All.EndLogin();
 			}
 			else
